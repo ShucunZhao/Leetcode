@@ -46,3 +46,8 @@ public:
         return ans;
     }
 };
+/*
+ * Corner case is:
+ * s = "aabaa", p = "aa"
+ * If you don't use the number of type in mt to judge you will get wrong ans.
+ */
