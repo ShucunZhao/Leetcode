@@ -1,3 +1,7 @@
+/*
+ * Never use the hash map in this question because it's hard to eliminate the repeated 
+ * elements with hash map!
+ */
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {

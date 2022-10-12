@@ -4,6 +4,10 @@
  * 1.Sort the given array using the two pointers method(point at head and tail) at first
  * 2.Eliminate the repeated elements every time when iterating and pointer move on.
  */
+/*
+ * Never use the hash map in this question because it's hard to eliminate the repeated 
+ * elements with hash map!
+ */
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
