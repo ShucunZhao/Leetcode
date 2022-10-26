@@ -12,19 +12,14 @@
 class Solution {
 public:
     int sumOfLeftLeaves(TreeNode* root) {
+        if(root==NULL) return 0;
+        if(root->left==NULL&&root->right==NULL) return 0;
         int sum = 0;
-        getLeftSum(root, sum);
-        return sum;
-    }
-    
-    void getLeftSum(TreeNode * cur, int & sum){
-        if(cur==NULL) return;
-        if(cur->left==NULL&&cur->right==NULL) return;
-        if(cur->left!=NULL&&cur->left->left==NULL&&cur->left->right==NULL){
-            sum = sum + cur->left->val;
-            return;
+        if(root->left!=NULL&&root->left->left==NULL&&root->left->right==NULL){
+            sum+=root->left->val;
         }
-        getLeftSum(cur->left, sum);
-        getLeftSum(cur->right, sum);
+        int sumL = sumOfLeftLeaves(root->left);
+        int sumR = sumOfLeftLeaves(root->right);
+        return sum+sumL+sumR;
     }
 };
