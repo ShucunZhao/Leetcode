@@ -49,6 +49,7 @@ public:
                 }
             }
         }
+        //Step7: Test your dp array output to debug:
         // for(int i=0;i<nums.size();i++){
         //     for(int j=0;j<=minus;j++){
         //         cout<<"dp["<<i<<"]"<<"["<<j<<"]"<<dp[i][j]<<endl;
