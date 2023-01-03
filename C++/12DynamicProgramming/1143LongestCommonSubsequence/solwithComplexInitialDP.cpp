@@ -3,7 +3,7 @@ public:
     int longestCommonSubsequence(string text1, string text2) {
         int m = text1.size();
         int n = text2.size();
-        vector<vector<int> > dp(m+1, vector<int>(n+1, 0));
+        vector<vector<int> > dp(m, vector<int>(n, 0));
         bool flag1 = 0, flag2 = 0;
         for(int i=0;i<m;i++){
             if(!flag1&&text1[i]==text2[0]){
