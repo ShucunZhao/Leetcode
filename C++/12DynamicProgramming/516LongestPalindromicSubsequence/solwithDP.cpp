@@ -1,6 +1,6 @@
 /*
  * dp[i][j]: the longest length of subsequence which index is from i to j of source string.
- * Infer formula: For i!j&&i>j: if s[i]==s[j]: dp[i][j] = dp[i+1][j-1]+2
+ * Infer formula: For i!j&&j>i: if s[i]==s[j]: dp[i][j] = dp[i+1][j-1]+2
                                 else has two cases: I.get head one: dp[i][j] = dp[i+1][j]
                                                    II.get tail one: dp[i][j] = dp[i][j-1]
  * Initialization: when i is equal to j it's a palindrom whose length is 1, so that we need to initial dp[x][x] to 1.
