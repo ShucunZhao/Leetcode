@@ -2,7 +2,7 @@ class Solution {
 public:
     int MoreThanHalfNum_Solution(vector<int> numbers) {
         /*
-                                 i
+                                i
                 [1,2,3,2,2,2,5,4,2]
         ans: 2
         vote: 0
