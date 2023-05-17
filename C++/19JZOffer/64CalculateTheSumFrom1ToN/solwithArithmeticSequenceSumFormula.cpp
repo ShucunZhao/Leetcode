@@ -13,8 +13,8 @@ public:
                     Sn = ((2+n-1)*n)/2
                        = ((n+1)*n)/2
                        = (n^2+n)/2
-                       = (n^2+n)>>2
+                       = (n^2+n)>>1
         */   
-        return (pow(n,2.0)+n)/2;
+        return (int)(pow(n,2.0)+n)>>1;
     }
 };
