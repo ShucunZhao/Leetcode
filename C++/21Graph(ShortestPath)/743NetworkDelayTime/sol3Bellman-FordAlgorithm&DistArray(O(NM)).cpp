@@ -23,7 +23,8 @@ public:
         /*
             max(dist[end], dist[tmp]+dist[end])
         */
-        while(1){
+        while(1){//If there are negative cirle we need to use for-loop from 1 to N-1 instead 
+                //and judge one more time after two loop to determine there are negative circle.
             bool update = false;
             for(int i=0;i<times.size();i++){
                 int tmp = times[i][0];
