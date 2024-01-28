@@ -1,4 +1,4 @@
-package sol1withBS;
+package lc704BinarySearch.sol1withBS;
 
 import java.util.Scanner;
 
