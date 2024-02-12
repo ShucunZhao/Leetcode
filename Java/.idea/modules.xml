@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/02TwoPointers/02TwoPointers.iml" filepath="$PROJECT_DIR$/02TwoPointers/02TwoPointers.iml" />
       <module fileurl="file://$PROJECT_DIR$/03SlidingWindow/03SlidingWindow.iml" filepath="$PROJECT_DIR$/03SlidingWindow/03SlidingWindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/04SpiralMatrix/04SpiralMatrix.iml" filepath="$PROJECT_DIR$/04SpiralMatrix/04SpiralMatrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05LinkedList/05LinkedList.iml" filepath="$PROJECT_DIR$/05LinkedList/05LinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java.iml" filepath="$PROJECT_DIR$/Java.iml" />
     </modules>
   </component>
