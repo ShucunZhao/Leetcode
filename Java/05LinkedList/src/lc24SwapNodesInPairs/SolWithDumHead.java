@@ -1,7 +1,7 @@
 package lc24SwapNodesInPairs;
 import java.util.Scanner;
 
-public class SolWithPointers {
+public class SolWithDumHead {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         Solution S1 = new Solution();
