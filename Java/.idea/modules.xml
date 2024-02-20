@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/05LinkedList/05LinkedList.iml" filepath="$PROJECT_DIR$/05LinkedList/05LinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/06HashMap/06HashMap.iml" filepath="$PROJECT_DIR$/06HashMap/06HashMap.iml" />
       <module fileurl="file://$PROJECT_DIR$/07String/07String.iml" filepath="$PROJECT_DIR$/07String/07String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08Stack&amp;Queue/08Stack&amp;Queue.iml" filepath="$PROJECT_DIR$/08Stack&amp;Queue/08Stack&amp;Queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java.iml" filepath="$PROJECT_DIR$/Java.iml" />
     </modules>
   </component>
