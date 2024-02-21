@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class SolWithMonoStack {
+public class SolWithMonoDeque {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         Solution S1 = new Solution();
