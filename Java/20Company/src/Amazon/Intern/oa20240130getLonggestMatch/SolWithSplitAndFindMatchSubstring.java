@@ -1,5 +1,4 @@
-package Amazon.JanOA.oa02getLonggestMatchSubsequence;
-import java.util.Arrays;
+package Amazon.Intern.oa20240130getLonggestMatch;
 import java.util.Scanner;
 
 /**
