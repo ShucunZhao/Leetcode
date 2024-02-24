@@ -47,7 +47,7 @@ import java.util.Scanner;
  * Packages with weights 3 and 4 can be removed in groups of two. The package of weight 1 cannot be delivered as it cannot be chosen according to the rules.
  * Since it is not possible to deliver all packages, the answer is -1.
  */
-public class SolWithPointers {
+public class SolWithHashMapAndDP {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         Solution S1 = new Solution();
@@ -65,19 +65,15 @@ public class SolWithPointers {
     private static class Solution {
         public int findMinTrips(int[] packageweight) {
             /*
-                Sol: Step1: we count each type of packages number which is 'int cnt'
-                     Step2: find the minimum times to subtract cnt by 2 or 3 each time:
-                        Step2.1: Check if cnt can be divided by 3 cause it's the minumum times.
-                        Step2.2: If cnt cannot be divided by 3, check if it can be divided by 2.
-                        Step2.3: If cnt cannot be divided by 2 and 3, we try to divide cnt by 2 or 3 one time,
-                                 and then check if the remain-cnt can be divided by another number(2 or 3). And
-                                 we find the smaller as the ans.
-                        Step2.4: If all cases cannot divide cnt to 0, should be return -1.
-
+                Sol: Step1: we count each type of packages number in a hash map
+                     Step2: traverse the value of hash map to determine the minimum trip times, which can
+                            be convert to a climbing stair question and find the minimum steps.(One dimension DP)
                  packageweight = [1, 8, 5, 8, 5, 1, 1]
                  ms: 1:3 ->1
                      8:2 ->1
                      5:2 ->1
+                ----------------------------------------------
+                 In:   [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]   Out: 6
              */
             HashMap<Integer, Integer> ms = new HashMap<Integer, Integer>();
             for (int i : packageweight) {
@@ -86,41 +82,30 @@ public class SolWithPointers {
             int trip = 0;
             for (int cnt : ms.values()) {
                 if(cnt<2) return -1;
-                int step = findMinSteps(cnt);
-                if(step==-1) return -1;
+                int step = getMinSteps(cnt);
+                if(step==Integer.MIN_VALUE) return -1;
                 trip+=step;
-                /* Math method: [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7] this cannot pass
-                    */
             }
             return trip;
         }
-        public static int findMinSteps(int n) {
-            if(n==0) return 0;
-            //Special case when n<2 is impossible return -1
-            if (n < 2) {
-                return -1;
+        public static int getMinSteps(int n){
+            /*
+                    @Dsp: Same Problem with climb stair: each time you only climb 2 or 3, and find the minimum steps to get n stairs
+                    1. Meaning: dp[i]: the minimum steps to get stair i; index i: stair
+                    2. Formula: dp[i]: dp[i-4] dp[i-3] dp[i-2] dp[i-1] dp[i]; dp[i] = min(dp[i-2], dp[i-3])+1; each current index i will come from dp[i-2] + 1 and dp[i-3]+1
+                    3. Initialize: dp[0] = MAX, dp[1] = MAX, dp[2] = 1, dp[3] = 1
+                    4. Traverse: From front to end.
+             */
+            if(n<2) return -1;
+            if(n==2||n==3) return 1;
+            int[] dp  = new int[n+1];
+            Arrays.fill(dp, Integer.MAX_VALUE);
+            dp[2] = 1;
+            dp[3] = 1;
+            for(int i=4;i<=n;++i){
+                if(dp[i-2]==Integer.MAX_VALUE&&dp[i-3]==Integer.MAX_VALUE) continue;//Both dp[i-2] and dp[i-3] are no answer case.
+                dp[i] = Math.min(dp[i-2], dp[i-3])+1;
             }
-            // Step1: Create a dp array to store minimum steps when the n is index i, we need to get answer of n should the size should be n+1.
-            int[] dp = new int[n + 1];
-            // Initial all results as -1
-            Arrays.fill(dp, -1);// All the i = 1 should be -1 because it's impossible to subtract 2 or 3 to get 0.
-            dp[0] = 0;
-            // dp[1] = -1;
-            // 遍历从1到n，填充dp数组
-            for (int i = 2; i <= n; i++) {
-                // 如果从i-2到i是可行的（即dp[i-2]不是-1），更新dp[i]
-                if (i - 2 >= 0 && dp[i - 2] != -1) {
-                    dp[i] = dp[i - 2] + 1;
-                }
-                // 如果从i-3到i是可行的，也更新dp[i]
-                // 此时，如果dp[i]已经有值，取两种可能的最小值
-                if (i - 3 >= 0 && dp[i - 3] != -1) {
-                    dp[i] = dp[i] != -1 ? Math.min(dp[i], dp[i - 3] + 1) : dp[i - 3] + 1;
-                }
-            }
-
-            // 返回到达数字n所需的最小步数
-            // 如果dp[n]为-1，意味着无法通过减2或减3来达到n，因此返回-1
             return dp[n];
         }
     }
