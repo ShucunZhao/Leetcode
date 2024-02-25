@@ -1,4 +1,4 @@
-package Amazon.Intern.oa20241227GetMinLagDistance_CN;
+package Amazon.Intern.oa20231227GetMinLagDistance_CN;
 import java.util.Arrays;
 import java.util.Scanner;
 

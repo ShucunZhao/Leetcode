@@ -1,4 +1,4 @@
-package Amazon.Intern.oa20241223CheckSimilarPasswords;
+package Amazon.Intern.oa20231223CheckSimilarPasswords;
 
 import java.util.Scanner;
 
