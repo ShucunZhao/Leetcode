@@ -68,8 +68,8 @@ public class SolWithSortAndFactor {
         public long getMaxRewardPoints(int[] reward) {
             /*
                 Sol with sort then get and subtract.
-                How to substract? We just need to maintain a factor to be substracted and increase it by 1 when get points each time,
-                then use next element to subtract it to get the next time points
+                How to substract? We just need to maintain a factor to be substracted and increase it by 1 when get
+                points each time, then use next element to subtract it to get the next time points
                 Ex1：
                     Input:  reward = [5, 2, 2, 3, 1]    Output: 7
                             sorted = [5,3,2,2,1] factor: 2 ans:5,5+(3-1)=7,

@@ -56,8 +56,8 @@ public class SolWithTwoHeaps {
         }
         public long findMinimumOperations(int[] boxes) {
             /*
-                Similar to leetcode 295, when medium difference is samller than one,
-                the boxes is even distribution.
+                Similar to leetcode 295, when the difference of max and min elements equal
+                or smaller than one, the boxes is even distribution.
             */
             PriorityQueue<Integer> minHeap = new PriorityQueue<>();
             PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(new myCmp());

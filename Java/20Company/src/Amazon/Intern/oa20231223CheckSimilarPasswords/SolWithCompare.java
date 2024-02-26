@@ -77,12 +77,10 @@ public class SolWithCompare {
             /*
                 Input:  newPasswords = ["aaccbbee", "aab"], oldPasswords = ["bdbf", "aee"]
                 Output: ["YES", "NO"]
-                Sol: we can determine by:
-                    Traverse newPwd from front to end:
-                        Determine if char at newPwd current index i is equal to oldPwd or can convert to oldPwd by +1
-                        if yes, move the index j in old pwd.
-                    If the index j go to the back of oldPwd means there has a subsequence or can convert a subsequence
-                    from newPwd to match to oldPwd, which means it's a similar password.
+        Sol: we can determine by: Traverse newPwd from front to end:
+              Determine if char at newPwd current index i is equal to oldPwd or can convert to oldPwd by +1
+              If yes, move the index j in old pwd. If the index j go to the back of oldPwd means there has a subsequence
+              or can convert a subsequence from newPwd to match to oldPwd, which means it's a similar password.
             */
             String[] ans = new String[newPasswords.length];
             for(int i=0;i<newPasswords.length;++i){

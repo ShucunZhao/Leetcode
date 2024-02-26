@@ -66,22 +66,17 @@ public class SolWithSortDiffAndTwoPointers {
     private static class Solution{
         public int countGamesWonByGroup1(int n, int[] group1, int[] group2) {
             /*
-                Input:  n = 3, group1 = [1, 2, 3], group2 = [3, 2, 1]   Output: 1
-                Sol: Because the each pairs can be treated as one on one(1 v 1) twice,
-                    Step1: so we can find all the ability difference between group1 and group2
-                    in the same index, get the g1[i]-g2[i] ability-difference array:
-                        diff: [-2,0,2]
-                    Step2: we sort it by ascending order to get the corresponding ability of group1 members
-                        sorted: [-2,0,2]:
-                    Step3: we use two pointers method to calculate the group1 member win cases:
-                        Step3.1: fix the most-right pointer which represent the strongest member of group1
-                        Step3.2: Then we move left pointer from left-most to right-1 pos and if only diff[left]+diff[right] is
-                                 larger than 0 that means all the pairs (left,right) of the group1 from left to right-1 will win(cause diff is ascending order)
-                        Step3.3: If the diff[left]+diff[right]<=0 we need to move left to left+1 cause this case of pair (left,right) for group1 will lose.
-                    Step4: Each time the step3 finished, we move the right to right-1 to determine the next larger group1 member situations.
-                                 r
-                     sorted: [-2,0,2]
-                                 l
+             Input:  n = 3, group1 = [1, 2, 3], group2 = [3, 2, 1]   Output: 1      sorted: [-2,0,2]
+        Sol: Because the each pairs can be treated as one on one(1 v 1) twice,                l    r
+         Step1: so we can find all the ability difference between group1 and group2 in the same index, get the g1[i]-g2[i]
+         ability-difference array: diff: [-2,0,2]. Step2: we sort it by ascending order to get the corresponding ability of
+         group1 members sorted: [-2,0,2].  Step3: we use two pointers method to calculate the group1 member win cases:
+         Step3.1: fix the most-right pointer which represent the strongest member of group1
+         Step3.2: Then we move left pointer from left-most to right-1 pos and if only diff[left]+diff[right] is larger than 0
+              that means all the pairs (left,right) of the group1 from left to right-1 will win(cause diff is ascending order)
+         Step3.3: If the diff[left]+diff[right]<=0 we need to move left to left+1 cause this case of pair (left,right) for
+         group1 will lose. Step4: Each time the step3 finished, we move the right to right-1 to determine the next larger
+          group1 member situations.
             */
             int mod = 1000000007;
             List<Integer> diff = new ArrayList<>();

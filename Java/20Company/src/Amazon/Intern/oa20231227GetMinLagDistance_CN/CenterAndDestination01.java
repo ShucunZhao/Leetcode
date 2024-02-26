@@ -49,12 +49,12 @@ public class CenterAndDestination01 {
                 center[i] = Integer.parseInt(cSet[i]);
                 dest[i] = Integer.parseInt(dSet[i]);
             }
-            int ans = S1.getLag(center, dest);
+            int ans = S1.getMinDistance(center, dest);
             System.out.println("Res: "+ans);
         }
     }
     public static class Solution{
-        public int getLag(int[] center, int[] dest){
+        public int getMinDistance(int[] center, int[] dest){
             Arrays.sort(center);
             Arrays.sort(dest);
             int n = center.length;

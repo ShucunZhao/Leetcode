@@ -90,11 +90,12 @@ public class SolWithHashMapAndDP {
         }
         public static int getMinSteps(int n){
             /*
-                    @Dsp: Same Problem with climb stair: each time you only climb 2 or 3, and find the minimum steps to get n stairs
-                    1. Meaning: dp[i]: the minimum steps to get stair i; index i: stair
-                    2. Formula: dp[i]: dp[i-4] dp[i-3] dp[i-2] dp[i-1] dp[i]; dp[i] = min(dp[i-2], dp[i-3])+1; each current index i will come from dp[i-2] + 1 and dp[i-3]+1
-                    3. Initialize: dp[0] = MAX, dp[1] = MAX, dp[2] = 1, dp[3] = 1
-                    4. Traverse: From front to end.
+        @Dsp: Same Problem with climb stair: each time you only climb 2 or 3, and find the minimum steps to get n stairs
+        1. Meaning: dp[i]: the minimum steps to get stair i; index i: stair
+        2. Formula: dp[i]: dp[i-4] dp[i-3] dp[i-2] dp[i-1] dp[i]; dp[i] = min(dp[i-2], dp[i-3])+1; each current index i will
+                    come from dp[i-2] + 1 and dp[i-3]+1
+        3. Initialize: dp[0] = MAX, dp[1] = MAX, dp[2] = 1, dp[3] = 1
+        4. Traverse: From front to end.
              */
             if(n<2) return -1;
             if(n==2||n==3) return 1;

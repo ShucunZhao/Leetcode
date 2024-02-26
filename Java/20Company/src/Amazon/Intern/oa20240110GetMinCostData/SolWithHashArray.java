@@ -65,14 +65,12 @@ public class SolWithHashArray {
     }
     private static class Solution{
         public String getMinCostData(String data) {
-            /*
-                Sol: When meet the '?' char, we need to find the minChar and minCnt by:
-                    Step1: Do the steps below from a to z because the optimal result will be around a-z:
-                        if the cnt of current char c is smaller than minCnt: update the minChar into c and update the minCnt to count(c)
-                           else if the cnt of the current char c is equal to minCnt,
-                                    determine if the lexico-order of c is smaller than minChar:
-                                            if yes: update the minChar to c and update the minCnt to count(c)
-                    Step2: Replace the minChar to original data and add one to the HashMap counter.
+            /* Sol: When meet the '?' char, we need to find the minChar and minCnt by:
+       Step1: Do the steps below from a to z because the optimal result will be around a-z: if the cnt of current char c
+              is smaller than minCnt: update the minChar into c and update the minCnt to count(c), else if the cnt of the
+              current char c is equal to minCnt, determine if the lexico-order of c is smaller than minChar:
+             if yes: update the minChar to c and update the minCnt to count(c)
+       Step2: Replace the minChar to original data and add one to the HashMap counter.
                       i
                 data: a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,?
             */
