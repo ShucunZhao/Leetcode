@@ -64,7 +64,7 @@ import java.util.Scanner;
  * dmv enw fox
  *  7   8  9
  * gpy hqz ir
- * 
+ *
  * Here, the keypad click count = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 = 14.
  */
 public class SolWithGreedy {
