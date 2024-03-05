@@ -1,4 +1,4 @@
-//package Amazon.oa20240217FortuneTelling;
+//package Amazon.FullTime.oa20240217FortuneTelling;
 //
 //import java.util.Arrays;
 //import java.util.HashMap;

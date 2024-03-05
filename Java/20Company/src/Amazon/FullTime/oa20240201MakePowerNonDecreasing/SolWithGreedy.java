@@ -1,4 +1,4 @@
-package Amazon.oa20240201MakePowerNonDecreasing;
+package Amazon.FullTime.oa20240201MakePowerNonDecreasing;
 import java.util.Scanner;
 
 /**

@@ -5,20 +5,19 @@ import java.util.Arrays;
 
 /**
  * @Description
- * As part of your Day 1 orientation at Amazon, your new team is hosting a programming challenge. You've been asked to participate in completing the following task. Given an array of integers, perform certain operations in order to satisfy some constraints. The constraints are as follows:
+ * As part of your Day 1 orientation at Amazon, your new team is hosting a programming challenge. You've been asked to participate in completing the following task.
+ * Given an array of integers, perform certain operations in order to satisfy some constraints. The constraints are as follows:
  * The first array element must be 1.
- * For all other elements, the difference between adjacent integers must not be greater than 1. Inother words, for 1 <= i< n, arr[i] - arr[i-1]<=1.
- * To accomplish this, the following operations areavailable:
- * Rearrange the elements in any wayReduce any element to any number that is at least 1.
+ * For all other elements, the difference between adjacent integers must not be greater than 1. In other words, for 1 <= i< n, arr[i] - arr[i-1]<=1.
+ * To accomplish this, the following operations are available:
+ * Rearrange the elements in any way Reduce any element to any number that is at least 1.
+ * What is the maximum value that can be achieved for the final element of the array by following these operations and constraints?
  *
- * What is the maximum value that can be achievedfor the fina/element of the array by followingthese operations and constraints?
- *
- * Example：
+ * Example:
  * arr=[3, 1, 3, 4]
- *
  * Subtract 1 from the first element, making the array [2, 1, 3, 4].
  * Rearrange the array into [1, 2, 3, 4].
- * The final element's value is 4, the maximum valuethat can be achieved. Therefore, the answer is 4.
+ * The final element's value is 4, the maximum value that can be achieved. Therefore, the answer is 4.
  * Function Description：
  * Complete the function maximumFinal in the editor below.
  * maximumFinal has the following parameter:
@@ -35,7 +34,7 @@ public class SolWithSort {
         // First, sort the array
         Arrays.sort(arr);
 
-        // Initialize the current value to be 1 because the first element must be 1
+        // Initialize the current max value to be 1 because the first element must be 1
         int currentValue = 1;
 
         // Iterate over the array, starting from the second element
