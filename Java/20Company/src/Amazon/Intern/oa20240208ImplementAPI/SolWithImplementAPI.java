@@ -35,10 +35,10 @@ public class SolWithImplementAPI {
                 String order = tokens.nextToken();
                 String user = tokens.nextToken();
                 String pwd = null;
-                if(!order.equalsIgnoreCase("LOGOUT")){
+                if(!order.equalsIgnoreCase(LOGOUT)){
                     pwd = tokens.nextToken();
                 }
-                if(order.equalsIgnoreCase("REGISTER")){
+                if(order.equalsIgnoreCase(REGISTER)){
                     if(Info.containsKey(user)){
                         ans[i] = "Username already exists";
                     }
@@ -47,7 +47,7 @@ public class SolWithImplementAPI {
                         Info.put(user, pwd);
                     }
                 }
-                else if(order.equalsIgnoreCase("LOGIN")){
+                else if(order.equalsIgnoreCase(LOGIN)){
                     if(Info.containsKey(user)){
                         if(Info.get(user).equals(pwd)){
                             ans[i] = "LoggedIn Successfully";
@@ -57,7 +57,7 @@ public class SolWithImplementAPI {
                         ans[i] = "Login Unsuccessfully";
                     }
                 }
-                else if(order.equalsIgnoreCase("LOGOUT")){
+                else if(order.equalsIgnoreCase(LOGOUT)){
                     if(loggedInUser.contains(user)){
                         ans[i] = "Logged Out Successfully";
                         loggedInUser.remove(user);
