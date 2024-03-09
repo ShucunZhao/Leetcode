@@ -1,4 +1,4 @@
-package MorganStanley.oa20240309findTotalCost;
+package MorganStanley.Intern.oa20240309findTotalCost;
 import java.util.PriorityQueue;
 
 /**
