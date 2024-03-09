@@ -1,4 +1,4 @@
-package Hetao01;
+package inv01Hetao;
 import java.util.Arrays;
 import java.util.Scanner;
 
