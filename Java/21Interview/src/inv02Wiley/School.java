@@ -15,7 +15,7 @@ public class School {
 
         List<Student> stdList = new ArrayList<>();
         stdList.add(std);
-        SELECT age FROM student Where id==1;
-        SELECT * FROM student JOIN course ON student.id = course.id WHERE duration=30;
+//        SELECT age FROM student Where id==1;
+//        SELECT * FROM student JOIN course ON student.id = course.id WHERE duration=30;
     }
 }
