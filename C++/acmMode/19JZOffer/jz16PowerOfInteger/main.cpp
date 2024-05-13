@@ -27,11 +27,18 @@ public:
     }
     double Power2(double base, int exponent) {
         /*
-            Convert exponent to binary:
-            In:  2.00000,3
+            Sol with quick exponet
+            In:  2.00000, 3
             Out: 8.00000
-            2^3 ---> 2^(11)---->2^(2^1+2^0)---->2^
+            2^3 ---> 2^2*2^1---->2^1*2^1*2^1
         */
+        if (exponent == 0) return 1;
+        if (exponent == 1) return base;
+        if (exponent < 0) return 1 / (Power2(base, -exponent));
+        if (exponent % 2 == 0) {
+            return Power2(base, exponent / 2) * Power2(base, exponent / 2);
+        }
+        return base * Power2(base, exponent - 1);
     }
 };
 
