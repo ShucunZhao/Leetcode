@@ -24,7 +24,6 @@ public:
         for (char& c : word) {
             if (cur->children.count(c)==0) {
                 cur->children[c] = new Node();
-                continue;
             }
             cur = cur->children[c];
         }
