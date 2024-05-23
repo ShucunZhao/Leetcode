@@ -34,6 +34,56 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    int target;
+    vector<int> GetLeastNumbers_Solution(vector<int>& input, int k) {
+        target = k;
+        sort(input, 0, input.size() - 1);
+        return vector<int>(input.begin(), input.begin()+k);
+    }
+    void sort(vector<int>& nums, int l, int r) {
+        if (l >= r) return;
+        int pivot = quickSort(nums, l, r);
+        if (pivot == target) return;
+        sort(nums, l, pivot - 1);
+        sort(nums, pivot + 1, r);
+    }
+    int quickSort(vector<int> & nums, int l, int r) {
+        /*
+        *  l
+        * [4,5,1,6,2,7,3,8]
+        *                 r
+        * ------------------
+            pivot: 4
+            l
+                   l
+            [3,2,1,4,6,7,5,8]
+                   r
+             -----------------
+             left: quickSort(nums,l, pivot-1)
+             right: quickSort(nums,pivot+1,r)
+            pivot: 4
+             l
+            [3,2,1,4,6,7,5,8]
+                   r
+        */
+        int pivot = nums[l];
+        while (l < r) {
+            while (l<r && nums[r] > pivot) r--;
+            if (l == r) break;
+            nums[l] = nums[r];
+            l++;
+            while (l < r && nums[l] <= pivot) l++;
+            if (l == r) break;
+            nums[r] = nums[l];
+            r--;
+        }
+        nums[l] = pivot;
+        return l;
+    }
+};
+
 int main(int argc, char* argv[]) {
     while (true) {
         Solution S1;
