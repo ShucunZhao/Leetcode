@@ -21,29 +21,31 @@ public:
                 13-10 = 3
                   3/(len(n)) = 1
                   3%(len(n)) = 1
-                1011                     
+                10111213  //6-2*2
         */
         if (n < 10) return n;
         int bit = 1;
-        int num_of_char = 9;
-        int number;
-        int index;
+        long long num_of_char = 9;
+        n -= 9;
+        bit++;//2
+        num_of_char = num_of_char * 10 * bit;//180
         while (n > num_of_char) {
-            if (num_of_char == 9) {
-                n -= 10;
-                number = pow(10,bit)+n;
-                index = n / bit;
-                bit++;
-                num_of_char = num_of_char * 10 * bit;//
-                continue;
-            }
             n -= num_of_char;
-            number = pow(10, bit) + n;
-            index = n / bit;
-            bit++;
-            num_of_char = num_of_char * 10 * bit;//
+            bit++;//2
+            num_of_char = 9*pow(10, bit-1)*bit;//180
         }
-        string N = to_string(number);
+        /*
+        //n=3
+        //Which number: whichNumber = n/bit = 1 (0 is the first one, 1 is the second one)
+        //int number = 10^(bit-1) // 10
+        //while(i--){ number++; }
+        //Which index: n-(whichNumber+1)-1
+           0   1   2   3   4   5   6   7   8   9                 3
+           10  11  12  13  14  15  16  17  18  19  ... 99
+        */
+        int whichNumber = (n-1) / bit + pow(10, bit - 1);//11
+        int index = (n-1)%bit;
+        string N = to_string(whichNumber);
         return N[index] - '0';
     }
 };
